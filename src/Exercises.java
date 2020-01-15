@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Exercises {
 
 	public boolean commonEnd(int[] a, int[] b) {
@@ -5,13 +8,25 @@ public class Exercises {
 			return false;
 		}
 		
-		// write your code here
-		
+		if (a[0] == b[0] || a[a.length - 1] == b[b.length - 1]) {
+			return true;
+		}
+	
 		return false;	// default return value to ensure compilation
 	}
 	
 	public String[] endsMeet(String[] values, int n) {
-		// write your code here
+		if (values == null || values.length < n || n < 0) {
+			return null;
+		}
+
+			int size = n * 2;
+
+		String[] endsOnly = new String[size];
+
+		for (int i = 0; i < n; i++) {
+			endsOnly[i] = values[i];
+		}
 		
 		return null;	// default return value to ensure compilation
 	}

@@ -20,7 +20,7 @@ public class Exercises {
 			return null;
 		}
 
-			int size = n * 2;
+		int size = n * 2;
 
 		String[] endsOnly = new String[size];
 
@@ -30,6 +30,10 @@ public class Exercises {
 
 		for (int i = 0; i < n; i++) {
 			endsOnly[i] = values[values.length - 1];
+		}
+
+		if (endsOnly.length != 0) {
+			return endsOnly;
 		}
 		
 		return null;	// default return value to ensure compilation
@@ -59,13 +63,39 @@ public class Exercises {
 	}
 	
 	public double biggest(double[] numbers) {
-		// write your code here
-		
-		return -1;		// default return value to ensure compilation
+		if (numbers == null || numbers.length < 3 || numbers.length % 2 == 0) {
+			return -1;
+		} else {
+			for (int i = 0; i < numbers.length; i++) {
+				if (numbers[i] < 0) {
+					return -1;
+				}
+			}
+		}
+
+		double firstNumber = numbers[0];
+		double middleNumber = numbers[(numbers.length - 1) / 2];
+		double lastNumber = numbers[numbers.length - 1];
+
+		if (firstNumber >= middleNumber) {
+			if (firstNumber >= lastNumber) {
+				return firstNumber;
+			} else  {
+				return lastNumber;
+			}
+		} else {
+			if (middleNumber >= lastNumber) {
+				return firstNumber;
+			} else  {
+				return lastNumber;
+			}
+		}
 	}
 	
 	public String[] middle(String[] values) {
-		// write your code here
+		// if (values == null || values.length < n || n < 0) {
+		// 	return null;
+		// }
 		
 		return null;	// default return value to ensure compilation
 	}

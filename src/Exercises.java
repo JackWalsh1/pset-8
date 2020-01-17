@@ -27,6 +27,10 @@ public class Exercises {
 		for (int i = 0; i < n; i++) {
 			endsOnly[i] = values[i];
 		}
+
+		for (int i = 0; i < n; i++) {
+			endsOnly[i] = values[values.length - 1];
+		}
 		
 		return null;	// default return value to ensure compilation
 	}

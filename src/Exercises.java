@@ -93,15 +93,42 @@ public class Exercises {
 	}
 	
 	public String[] middle(String[] values) {
-		// if (values == null || values.length < n || n < 0) {
-		// 	return null;
-		// }
+		if (values == null || values.length < 3 || values.length % 2 == 0) {
+			return null;
+		} else {
+			for (int i = 0; i < values.length; i++) {
+				if (values[i] == null) {
+					return null;
+				}
+			}
+		}
+
+		String[] middleElements = new String[3];
 		
-		return null;	// default return value to ensure compilation
+		for (int i = -1; i < 1; i++) {
+			middleElements[i + 1] = values[values.length/2 + i];
+		}
+		
+		return middleElements;
 	}
 
 	public boolean increasing(int[] numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 3) {
+			return false;
+		}
+
+		int firstNumber;
+		int secondNumber;
+		int thirdNumber;
+
+		for (int i = 0; i < numbers.length; i++) {
+			firstNumber = numbers[i];
+			secondNumber = numbers[i + 1];
+			thirdNumber = numbers[i + 2];
+			if (secondNumber - firstNumber == thirdNumber - secondNumber) {
+				return true;
+			}
+		}
 		
 		return false;	// default return value to ensure compilation
 	}

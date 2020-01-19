@@ -166,9 +166,22 @@ public class Exercises {
 	}
 	
 	public boolean balance(int[] numbers) {
-		// write your code here
+		if (numbers == null || numbers.length < 2) {
+			return false;
+		}
+
+		int leftHalf = 0;
+		int rightHalf = 0;
+
+		for (int i = 0; i < numbers.length / 2; i++) {
+			leftHalf += numbers[i];
+		}
+
+		for (int i = numbers.length / 2; i < numbers.length; i++) {
+			rightHalf += numbers[i];
+		}
 		
-		return false;	// default return value to ensure compilation
+		return (leftHalf == rightHalf);	// default return value to ensure compilation
 	}
 	
 	public int clumps(String[] values) {

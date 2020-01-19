@@ -137,19 +137,31 @@ public class Exercises {
 		if (values == null || values.length < 1) {
 			return false;
 		}
-		
-		boolean xIsEverywhere = false;
 
-		for (int i = 0; i < values.length; i++) {
-			return false;
+		for (int i = 0; i < values.length - 2; i++) {
+			if (!(values[i] == x && values[i + 2] == x)) {
+				return false;
+			}
 		}
 
-		return (xIsEverywhere);	// default return value to ensure compilation
+		if (values[values.length - 2] == x) { //edge case 
+			return true;
+		}
+
+		return (false);	// default return value to ensure compilation
 	}
 	
 	public boolean consecutive(int[] numbers) {
-		// write your code here
-		
+		if (numbers == null || numbers.length < 3) {
+			return false;
+		}
+
+		for (int i = 0; i < numbers.length - 3; ) {
+			if ((numbers[i] % 2 == numbers[i + 1] % 2) && (numbers[i + 1] % 2 == numbers[i + 2])) {
+				return true;
+			}
+		}
+
 		return false;	// default return value to ensure compilation
 	}
 	

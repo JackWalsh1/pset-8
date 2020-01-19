@@ -133,10 +133,18 @@ public class Exercises {
 		return false;	// default return value to ensure compilation
 	}
 	
-	public boolean everywhere(int[] numbers, int x) {
-		// write your code here
+	public boolean everywhere(int[] values, int x) { //was originally int[] numbers
+		if (values == null || values.length < 1) {
+			return false;
+		}
 		
-		return false;	// default return value to ensure compilation
+		boolean xIsEverywhere = false;
+
+		for (int i = 0; i < values.length; i++) {
+			return false;
+		}
+
+		return (xIsEverywhere);	// default return value to ensure compilation
 	}
 	
 	public boolean consecutive(int[] numbers) {
